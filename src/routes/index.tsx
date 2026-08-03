@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
 const BUSINESS = {
   name: "Compras em Casa",
   phone: "351912345678", // substituir pelo teu número com indicativo 351
-  area: "Lisboa",
+  area: "Gaia",
   serviceFee: "5,00 €",
   minimumOrder: "30,00 €",
   extraDistance: "2,00 €",
