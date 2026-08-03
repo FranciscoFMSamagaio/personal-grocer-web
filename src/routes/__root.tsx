@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Serviço de personal shopper em Lisboa: fazemos as tuas compras de supermercado e entregamos-te em casa. Rápido, simples e de confiança.",
       },
-      { name: "author", content: "Compras em Casa" },
+      { name: "author", content: "X" },
       {
         property: "og:title",
         content: "Compras em Casa - Entregas de Supermercado ao Domicílio",
