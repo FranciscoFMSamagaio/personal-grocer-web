@@ -278,9 +278,6 @@ function Index() {
               className="mx-auto bg-white text-fresh-dark hover:bg-white/95"
             />
           </div>
-          <p className="mt-4 text-sm text-primary-foreground/80">
-            Resposta em breve, normalmente no mesmo dia.
-          </p>
         </div>
       </Section>
 
