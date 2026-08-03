@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
 const BUSINESS = {
   name: "Compras em Casa",
   phone: "351912345678", // substituir pelo teu número com indicativo 351
-  area: "Lisboa",
+  area: "Gaia",
   serviceFee: "5,00 €",
   minimumOrder: "30,00 €",
   extraDistance: "2,00 €",
@@ -160,16 +160,9 @@ function Index() {
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             Fazemos as tuas compras de supermercado e entregamos-te em casa.
-            Sem filas, sem stress.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <WhatsAppButton size="large" />
-            <a
-              href="#como-funciona"
-              className="inline-flex items-center justify-center rounded-full border border-input bg-card px-6 py-4 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              Saber mais
-            </a>
           </div>
         </div>
       </section>
@@ -183,11 +176,6 @@ function Index() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             O teu personal shopper no supermercado
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Não tens stock em casa? Não precisas. Nós compramos tudo no
-            supermercado por ti — produtos frescos, marcas que gostas e
-            alternativas quando algo falta.
-          </p>
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -199,7 +187,7 @@ function Index() {
           <StepCard
             icon={ShoppingBasket}
             title="Compramos por ti"
-            description="Seleccionamos os produtos com cuidado, como se fossem para nós."
+            description="Seleccionamos os produtos com cuidado."
           />
           <StepCard
             icon={Truck}
@@ -253,12 +241,8 @@ function Index() {
             Preços
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Simples e sem surpresas
+            Simples
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Pagas apenas pela taxa de serviço e entrega. O valor das compras é
-            pago à parte, conforme combinarmos.
-          </p>
         </div>
 
         <div className="mt-10 grid gap-4">
@@ -272,20 +256,6 @@ function Index() {
             value={BUSINESS.minimumOrder}
             note="Encomendas abaixo deste valor podem não ser aceites."
           />
-          <PriceRow
-            label="Zona de entrega e custos extra"
-            value={`+ ${BUSINESS.extraDistance}`}
-            note={`Entregamos em ${BUSINESS.area}. Zonas mais afastadas podem ter um custo extra de ${BUSINESS.extraDistance}.`}
-          />
-        </div>
-
-        <div className="mt-6 rounded-2xl border border-dashed border-border bg-card p-5">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            <strong className="text-foreground">Nota:</strong> o valor das
-            compras em si é pago à parte — reembolsado por transferência ou na
-            entrega, conforme o modelo que combinarmos. Enviamos-te sempre o
-            resumo do supermercado antes de pagares.
-          </p>
         </div>
       </Section>
 
@@ -308,9 +278,6 @@ function Index() {
               className="mx-auto bg-white text-fresh-dark hover:bg-white/95"
             />
           </div>
-          <p className="mt-4 text-sm text-primary-foreground/80">
-            Resposta em breve, normalmente no mesmo dia.
-          </p>
         </div>
       </Section>
 
