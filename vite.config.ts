@@ -18,6 +18,12 @@ export default defineConfig({
       crawlLinks: true,
     },
   },
+  nitro: {
+    // The prerender preview server looks for dist/server/server.js.
+    output: {
+      filename: "server.js",
+    },
+  },
   vite: {
     // Use a relative base path so assets work on any GitHub Pages repository URL.
     base: "./",
