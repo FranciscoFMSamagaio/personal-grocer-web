@@ -160,16 +160,9 @@ function Index() {
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             Fazemos as tuas compras de supermercado e entregamos-te em casa.
-            Sem filas, sem stress.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <WhatsAppButton size="large" />
-            <a
-              href="#como-funciona"
-              className="inline-flex items-center justify-center rounded-full border border-input bg-card px-6 py-4 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              Saber mais
-            </a>
           </div>
         </div>
       </section>
