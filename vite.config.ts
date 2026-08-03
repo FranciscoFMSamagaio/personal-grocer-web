@@ -19,10 +19,8 @@ export default defineConfig({
     },
   },
   nitro: {
-    // The prerender preview server looks for dist/server/server.js.
-    output: {
-      filename: "server.js",
-    },
+    // Build a static site instead of a Cloudflare Worker so GitHub Pages can serve it.
+    preset: "static",
   },
   vite: {
     // Use a relative base path so assets work on any GitHub Pages repository URL.
