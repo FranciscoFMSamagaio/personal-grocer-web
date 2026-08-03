@@ -8,20 +8,16 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-    // Generate static HTML files so the site can be hosted on GitHub Pages.
+    // Generate a static site (no SSR runtime) so GitHub Pages can serve it.
+    static: true,
     prerender: {
       enabled: true,
       autoStaticPathsDiscovery: true,
       crawlLinks: true,
     },
   },
-  nitro: {
-    // Build a static site instead of a Cloudflare Worker so GitHub Pages can serve it.
-    preset: "static",
-  },
+  // Disable Nitro; static output does not need a server runtime.
+  nitro: false,
   vite: {
     // Use a relative base path so assets work on any GitHub Pages repository URL.
     base: "./",
