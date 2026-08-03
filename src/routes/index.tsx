@@ -241,12 +241,8 @@ function Index() {
             Preços
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Simples e sem surpresas
+            Simples
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Pagas apenas pela taxa de serviço e entrega. O valor das compras é
-            pago à parte, conforme combinarmos.
-          </p>
         </div>
 
         <div className="mt-10 grid gap-4">
@@ -260,20 +256,6 @@ function Index() {
             value={BUSINESS.minimumOrder}
             note="Encomendas abaixo deste valor podem não ser aceites."
           />
-          <PriceRow
-            label="Zona de entrega e custos extra"
-            value={`+ ${BUSINESS.extraDistance}`}
-            note={`Entregamos em ${BUSINESS.area}. Zonas mais afastadas podem ter um custo extra de ${BUSINESS.extraDistance}.`}
-          />
-        </div>
-
-        <div className="mt-6 rounded-2xl border border-dashed border-border bg-card p-5">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            <strong className="text-foreground">Nota:</strong> o valor das
-            compras em si é pago à parte — reembolsado por transferência ou na
-            entrega, conforme o modelo que combinarmos. Enviamos-te sempre o
-            resumo do supermercado antes de pagares.
-          </p>
         </div>
       </Section>
 
