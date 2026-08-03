@@ -283,7 +283,7 @@ function Index() {
           <p className="text-sm leading-relaxed text-muted-foreground">
             <strong className="text-foreground">Nota:</strong> o valor das
             compras em si é pago à parte — reembolsado por transferência ou na
-            entrega, conforme o modelo que combinarmos. Enviássemos sempre o
+            entrega, conforme o modelo que combinarmos. Enviamos-te sempre o
             resumo do supermercado antes de pagares.
           </p>
         </div>
