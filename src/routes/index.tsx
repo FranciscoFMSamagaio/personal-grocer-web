@@ -176,11 +176,6 @@ function Index() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             O teu personal shopper no supermercado
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Não tens stock em casa? Não precisas. Nós compramos tudo no
-            supermercado por ti — produtos frescos, marcas que gostas e
-            alternativas quando algo falta.
-          </p>
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -192,7 +187,7 @@ function Index() {
           <StepCard
             icon={ShoppingBasket}
             title="Compramos por ti"
-            description="Seleccionamos os produtos com cuidado, como se fossem para nós."
+            description="Seleccionamos os produtos com cuidado."
           />
           <StepCard
             icon={Truck}
