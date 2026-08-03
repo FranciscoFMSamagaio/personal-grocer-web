@@ -6,20 +6,25 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({
-  tanstackStart: {
-    // Generate a static site (no SSR runtime) so GitHub Pages can serve it.
-    static: true,
-    prerender: {
-      enabled: true,
-      autoStaticPathsDiscovery: true,
-      crawlLinks: true,
+export default defineConfig(() => {
+  // GitHub Pages serves the site under the repository name (e.g. /repo-name/).
+  // The workflow sets BASE_PATH; locally we default to "/".
+  const base = process.env["BASE_PATH"] || "/";
+
+  return {
+    tanstackStart: {
+      // Generate a static site (no SSR runtime) so GitHub Pages can serve it.
+      static: true,
+      prerender: {
+        enabled: true,
+        autoStaticPathsDiscovery: true,
+        crawlLinks: true,
+      },
     },
-  },
-  // Disable Nitro; static output does not need a server runtime.
-  nitro: false,
-  vite: {
-    // Use a relative base path so assets work on any GitHub Pages repository URL.
-    base: "./",
-  },
+    // Disable Nitro; static output does not need a server runtime.
+    nitro: false,
+    vite: {
+      base,
+    },
+  };
 });
