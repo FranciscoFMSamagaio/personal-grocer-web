@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Fazemos as tuas compras de supermercado em Lisboa e entregamos-te em casa. Serviço de personal shopper rápido e de confiança.",
+          "Fazemos as tuas compras de supermercado em Gaia e entregamos-te em casa. Serviço de personal shopper rápido e de confiança.",
       },
       {
         property: "og:title",
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Fazemos as tuas compras de supermercado em Lisboa e entregamos-te em casa.",
+          "Fazemos as tuas compras de supermercado em Gaia e entregamos-te em casa.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -192,7 +192,7 @@ function Index() {
           <StepCard
             icon={Truck}
             title="Entregamos em casa"
-            description="Levamos as compras à tua porta na zona de Lisboa, no horário combinado."
+            description="Levamos as compras à tua porta na zona de Gaia, no horário combinado."
           />
         </div>
 
