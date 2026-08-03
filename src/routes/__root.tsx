@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import faviconUrl from "/favicon.ico?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -83,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Serviço de personal shopper em Lisboa: fazemos as tuas compras de supermercado e entregamos-te em casa. Rápido, simples e de confiança.",
       },
-      { name: "author", content: "Compras em Casa" },
+      { name: "author", content: "X" },
       {
         property: "og:title",
         content: "Compras em Casa - Entregas de Supermercado ao Domicílio",
@@ -101,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: faviconUrl, type: "image/x-icon" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
