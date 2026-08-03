@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Compras em Casa - Entregas de Supermercado ao Domicílio",
+        title: "X - Entregas de Supermercado ao Domicílio",
       },
       {
         name: "description",
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Compras em Casa - Entregas de Supermercado ao Domicílio",
+        content: "X - Entregas de Supermercado ao Domicílio",
       },
       {
         property: "og:description",
