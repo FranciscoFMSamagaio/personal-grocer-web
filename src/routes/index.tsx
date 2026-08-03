@@ -39,12 +39,12 @@ export const Route = createFileRoute("/")({
 
 // IMPORTANTE: Substitui estes dados pelos teus antes de publicar.
 const BUSINESS = {
-  name: "Compras em Casa",
-  phone: "351912345678", // substituir pelo teu número com indicativo 351
+  name: "X",
+  phone: "351934984880",
   area: "Gaia",
-  serviceFee: "5,00 €",
-  minimumOrder: "30,00 €",
-  extraDistance: "2,00 €",
+  serviceFee: "Y",
+  minimumOrder: "Y",
+  extraDistance: "Y",
 };
 
 const WHATSAPP_TEXT = encodeURIComponent(
