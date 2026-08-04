@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BUSINESS, whatsappLink } from "@/lib/business";
 import {
   MessageCircle,
   ShoppingBasket,
@@ -38,19 +39,8 @@ export const Route = createFileRoute("/")({
 });
 
 // IMPORTANTE: Substitui estes dados pelos teus antes de publicar.
-const BUSINESS = {
-  name: "X",
-  phone: "351934984880",
-  area: "Gaia",
-  serviceFee: "Y",
-  minimumOrder: "Y",
-  extraDistance: "Y",
-};
 
-const WHATSAPP_TEXT = encodeURIComponent(
-  "Olá, gostava de fazer uma encomenda de supermercado."
-);
-const WHATSAPP_LINK = `https://wa.me/${BUSINESS.phone}?text=${WHATSAPP_TEXT}`;
+const WHATSAPP_LINK = whatsappLink();
 
 function WhatsAppButton({
   size = "default",
