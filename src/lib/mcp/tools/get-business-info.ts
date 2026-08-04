@@ -1,4 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
+import { z } from "zod";
 import { BUSINESS, whatsappLink } from "@/lib/business";
 
 export default defineTool({
@@ -7,6 +8,14 @@ export default defineTool({
   description:
     "Devolve a informação pública do serviço de compras e entregas ao domicílio: nome, zona de entrega, como funciona e contacto de WhatsApp.",
   inputSchema: {},
+  outputSchema: {
+    name: z.string(),
+    area: z.string(),
+    concept: z.string(),
+    how_it_works: z.array(z.string()),
+    whatsapp: z.string(),
+    ordering: z.string(),
+  },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const info = {

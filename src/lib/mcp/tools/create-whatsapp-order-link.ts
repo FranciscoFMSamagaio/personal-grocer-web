@@ -16,6 +16,7 @@ export default defineTool({
       .optional()
       .describe("Notas opcionais, por exemplo horário de entrega preferido."),
   },
+  outputSchema: { url: z.string(), items: z.array(z.string()) },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: ({ items, notes }) => {
     const list = items.map((item) => item.trim()).filter(Boolean);

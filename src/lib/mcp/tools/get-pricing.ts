@@ -1,4 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
+import { z } from "zod";
 import { BUSINESS } from "@/lib/business";
 
 export default defineTool({
@@ -7,6 +8,12 @@ export default defineTool({
   description:
     "Devolve a taxa de serviço e entrega, o valor mínimo de compra e a zona de entrega.",
   inputSchema: {},
+  outputSchema: {
+    service_fee: z.string(),
+    minimum_order: z.string(),
+    delivery_area: z.string(),
+    note: z.string(),
+  },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const pricing = {
