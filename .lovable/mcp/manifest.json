@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "seu-super-amigo",
+      "version": "0.1.0",
+      "title": "Seu Super Amigo"
+    },
+    "tools": [
+      {
+        "name": "get_business_info",
+        "title": "Informação do negócio",
+        "description": "Devolve a informação pública do serviço de compras e entregas ao domicílio: nome, zona de entrega, como funciona e contacto de WhatsApp.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_pricing",
+        "title": "Preços do serviço",
+        "description": "Devolve a taxa de serviço e entrega, o valor mínimo de compra e a zona de entrega.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "create_whatsapp_order_link",
+        "title": "Criar link de encomenda WhatsApp",
+        "description": "Cria um link de WhatsApp pré-preenchido com a lista de compras, para o cliente enviar a encomenda numa conversa.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Lista de produtos a encomendar, um por linha."
+            },
+            "notes": {
+              "description": "Notas opcionais, por exemplo horário de entrega preferido.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "items"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
