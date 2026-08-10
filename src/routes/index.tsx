@@ -3,7 +3,6 @@ import { BUSINESS, whatsappLink } from "@/lib/business";
 import {
   MessageCircle,
   ShoppingBasket,
-  Truck,
   HandCoins,
   MapPin,
   CheckCircle2,
