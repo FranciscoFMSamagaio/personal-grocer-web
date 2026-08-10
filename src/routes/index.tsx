@@ -169,17 +169,17 @@ function Index() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <StepCard
-            icon={MessageCircle}
+            step={1}
             title="Envias a lista"
             description="Manda-nos a tua lista por WhatsApp, com ou sem marcas preferidas."
           />
           <StepCard
-            icon={ShoppingBasket}
+            step={2}
             title="Compramos por ti"
             description="Seleccionamos os produtos com cuidado."
           />
           <StepCard
-            icon={Truck}
+            step={3}
             title="Entregamos em casa"
             description="Levamos as compras à tua porta na zona de Gaia, no horário combinado."
           />
