@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import faviconUrl from "/favicon.ico?url";
+//import faviconUrl from "/favicon.ico?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: faviconUrl, type: "image/x-icon" },
+//      { rel: "icon", href: faviconUrl, type: "image/x-icon" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
