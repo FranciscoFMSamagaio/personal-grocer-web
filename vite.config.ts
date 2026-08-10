@@ -7,8 +7,25 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/tanstack/vite";
 
+const isGitHubPages = process.env["GITHUB_PAGES"] === "true";
+const base = isGitHubPages ? process.env["BASE_PATH"] || "/" : "/";
+
 export default defineConfig({
+  ...(isGitHubPages
+    ? {
+        tanstackStart: {
+          static: true,
+          prerender: {
+            enabled: true,
+            autoStaticPathsDiscovery: true,
+            crawlLinks: true,
+          },
+        },
+        nitro: false as const,
+      }
+    : {}),
   vite: {
+    base,
     plugins: [mcpPlugin()],
   },
 });
