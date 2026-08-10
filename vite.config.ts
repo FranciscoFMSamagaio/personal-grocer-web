@@ -7,24 +7,8 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/tanstack/vite";
 
-// GitHub Pages serves the site under the repository name (e.g. /repo-name/).
-// The workflow sets BASE_PATH; locally we default to "/".
-const base = process.env["BASE_PATH"] || "/";
-
 export default defineConfig({
-  tanstackStart: {
-    // Generate a static site (no SSR runtime) so GitHub Pages can serve it.
-    static: true,
-    prerender: {
-      enabled: true,
-      autoStaticPathsDiscovery: true,
-      crawlLinks: true,
-    },
-  },
-  // Disable Nitro; static output does not need a server runtime.
-  nitro: false,
   vite: {
-    base,
     plugins: [mcpPlugin()],
   },
 });
