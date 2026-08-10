@@ -3,7 +3,6 @@ import { BUSINESS, whatsappLink } from "@/lib/business";
 import {
   MessageCircle,
   ShoppingBasket,
-  Truck,
   HandCoins,
   MapPin,
   CheckCircle2,
@@ -86,18 +85,18 @@ function Section({
 }
 
 function StepCard({
-  icon: Icon,
+  step,
   title,
   description,
 }: {
-  icon: React.ElementType;
+  step: number;
   title: string;
   description: string;
 }) {
   return (
     <div className="flex items-start gap-4 rounded-2xl bg-card p-5 shadow-sm ring-1 ring-border">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-fresh-light text-fresh-dark">
-        <Icon className="h-5 w-5" />
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-fresh-light text-lg font-bold text-fresh-dark">
+        {step}
       </div>
       <div>
         <h3 className="font-semibold text-foreground">{title}</h3>
@@ -170,17 +169,17 @@ function Index() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <StepCard
-            icon={MessageCircle}
+            step={1}
             title="Envias a lista"
             description="Manda-nos a tua lista por WhatsApp, com ou sem marcas preferidas."
           />
           <StepCard
-            icon={ShoppingBasket}
+            step={2}
             title="Compramos por ti"
             description="Seleccionamos os produtos com cuidado."
           />
           <StepCard
-            icon={Truck}
+            step={3}
             title="Entregamos em casa"
             description="Levamos as compras à tua porta na zona de Gaia, no horário combinado."
           />
