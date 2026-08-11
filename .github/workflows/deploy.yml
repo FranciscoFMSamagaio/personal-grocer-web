@@ -21,6 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -36,7 +39,7 @@ jobs:
           BASE_PATH: /${{ github.event.repository.name }}/
 
       - name: Upload static files
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist/client
 
