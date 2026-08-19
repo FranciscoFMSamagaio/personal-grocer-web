@@ -6,6 +6,7 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/tanstack/vite";
+import netlify from "@netlify/vite-plugin-tanstack-start";
 
 const isGitHubPages = process.env["GITHUB_PAGES"] === "true";
 const base = isGitHubPages ? process.env["BASE_PATH"] || "/" : "/";
@@ -21,11 +22,11 @@ export default defineConfig({
             crawlLinks: true,
           },
         },
-        nitro: false as const,
       }
     : {}),
+  nitro: false as const,
   vite: {
     base,
-    plugins: [mcpPlugin()],
+    plugins: [mcpPlugin(), ...(isGitHubPages ? [] : [netlify()])],
   },
 });
