@@ -90,11 +90,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Serviço de personal shopper em Lisboa: fazemos as tuas compras de supermercado e entregamos-te em casa.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://projectprada.netlify.app/og-image.png" },
+      {
+        property: "og:image",
+        content: "https://projectprada.netlify.app/whatsapp-preview-20260819.png",
+      },
+      {
+        property: "og:image:secure_url",
+        content: "https://projectprada.netlify.app/whatsapp-preview-20260819.png",
+      },
+      { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://projectprada.netlify.app/og-image.png" },
+      {
+        name: "twitter:image",
+        content: "https://projectprada.netlify.app/whatsapp-preview-20260819.png",
+      },
     ],
     links: [
       {
@@ -117,7 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/favicon.ico",
+        href: "/favicon.ico?v=20260819",
       },
       {
         rel: "apple-touch-icon",
