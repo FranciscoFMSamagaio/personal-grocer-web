@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BUSINESS, whatsappLink } from "@/lib/business";
 import {
   MessageCircle,
-  ShoppingBasket,
   HandCoins,
   MapPin,
   CheckCircle2,
@@ -156,9 +155,11 @@ function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-fresh-light/40 to-background px-4 pb-16 pt-16 sm:pb-24 sm:pt-24">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-fresh text-primary-foreground shadow-lg shadow-fresh/20">
-            <ShoppingBasket className="h-8 w-8" />
-          </div>
+          <img
+            src="/logo.png"
+            alt=""
+            className="mx-auto mb-6 h-20 w-20 rounded-3xl shadow-lg shadow-fresh/20"
+          />
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             {BUSINESS.name}
           </h1>
