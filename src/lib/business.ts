@@ -6,20 +6,48 @@ export const BUSINESS = {
 
 // Taxa de serviço: valor fixo até ao limite, percentagem do valor total acima.
 export const PRICING = {
-  threshold: "50 €",
-  weekdays: { upTo: "6 €", above: "10%" },
-  weekends: { upTo: "10 €", above: "15%" },
+  threshold: 50,
+  weekdays: { fixed: 6, percent: 0.1 },
+  weekends: { fixed: 10, percent: 0.15 },
+  // Acima de `overKm` soma `fee`; acima de farKm soma ainda farPerKm por km extra.
   distance: [
-    { label: "Mais de 5 km", value: "+1 €" },
-    { label: "Mais de 10 km", value: "+3 €" },
-    { label: "Mais de 20 km", value: "+5 €" },
-    { label: "Mais de 25 km", value: "+5 € + 0,20 €/km" },
+    { overKm: 5, fee: 1 },
+    { overKm: 10, fee: 3 },
+    { overKm: 20, fee: 5 },
   ],
-  extras: [
-    { label: "Mais de 30 artigos", value: "+2 €" },
-    { label: "Entrega urgente", value: "+5 €" },
-  ],
+  farKm: 25,
+  farPerKm: 0.2,
+  manyItems: { over: 30, fee: 2 },
+  urgent: 5,
 };
+
+export function euros(value: number) {
+  const s = value.toFixed(2).replace(".", ",").replace(/,00$/, "");
+  return `${s} €`;
+}
+
+export function estimateFee({
+  weekend,
+  total,
+  km,
+  manyItems,
+  urgent,
+}: {
+  weekend: boolean;
+  total: number;
+  km: number;
+  manyItems: boolean;
+  urgent: boolean;
+}) {
+  const day = weekend ? PRICING.weekends : PRICING.weekdays;
+  const base = total <= PRICING.threshold ? day.fixed : total * day.percent;
+  let distance = 0;
+  for (const tier of PRICING.distance) if (km > tier.overKm) distance = tier.fee;
+  if (km > PRICING.farKm) distance += (km - PRICING.farKm) * PRICING.farPerKm;
+  const extras =
+    (manyItems ? PRICING.manyItems.fee : 0) + (urgent ? PRICING.urgent : 0);
+  return { base, distance, total: base + distance + extras };
+}
 
 export function whatsappLink(message?: string) {
   const text = encodeURIComponent(

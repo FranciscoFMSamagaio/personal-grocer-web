@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 5173
+    },
+    {
+      "name": "dev-sem-netlify",
+      "runtimeExecutable": "env",
+      "runtimeArgs": ["NETLIFY_DEV=1", "npm", "run", "dev"],
+      "port": 5173
     }
   ]
 }
