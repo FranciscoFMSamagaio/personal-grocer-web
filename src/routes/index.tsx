@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BUSINESS, whatsappLink } from "@/lib/business";
+import { BUSINESS, PRICING, whatsappLink } from "@/lib/business";
 import {
   MessageCircle,
   HandCoins,
@@ -172,6 +172,76 @@ function Index() {
         </div>
       </section>
 
+      {/* Preços */}
+      <Section id="precos" className="bg-secondary/50">
+        <div className="text-center">
+          <span className="inline-block rounded-full bg-fresh-light px-3 py-1 text-xs font-semibold uppercase tracking-wide text-fresh-dark">
+            Preços
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Simples
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Eu trato de tudo: compras e entrega numa só taxa.
+          </p>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-2xl bg-card shadow-sm ring-1 ring-border">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
+                <th className="p-4 font-semibold">Valor das compras</th>
+                <th className="p-4 text-right font-semibold">Dias úteis</th>
+                <th className="p-4 text-right font-semibold">Fins de semana</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="p-4 font-medium text-foreground">
+                  Até {PRICING.threshold}
+                </td>
+                <td className="p-4 text-right text-lg font-bold text-fresh">
+                  {PRICING.weekdays.upTo}
+                </td>
+                <td className="p-4 text-right text-lg font-bold text-fresh">
+                  {PRICING.weekends.upTo}
+                </td>
+              </tr>
+              <tr>
+                <td className="p-4 font-medium text-foreground">
+                  Acima de {PRICING.threshold}
+                  <p className="text-xs font-normal text-muted-foreground">
+                    Percentagem do valor total
+                  </p>
+                </td>
+                <td className="p-4 text-right text-lg font-bold text-fresh">
+                  {PRICING.weekdays.above}
+                </td>
+                <td className="p-4 text-right text-lg font-bold text-fresh">
+                  {PRICING.weekends.above}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="mt-10 text-lg font-semibold text-foreground">
+          Distância
+        </h3>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {PRICING.distance.map((d) => (
+            <PriceRow key={d.label} label={d.label} value={d.value} />
+          ))}
+        </div>
+
+        <h3 className="mt-10 text-lg font-semibold text-foreground">Extras</h3>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {PRICING.extras.map((e) => (
+            <PriceRow key={e.label} label={e.label} value={e.value} />
+          ))}
+        </div>
+      </Section>
+
       {/* Quem somos / Como funciona */}
       <Section id="como-funciona">
         <div className="text-center">
@@ -236,31 +306,6 @@ function Index() {
               </span>
             </div>
           </div>
-        </div>
-      </Section>
-
-      {/* Preços */}
-      <Section id="precos" className="bg-secondary/50">
-        <div className="text-center">
-          <span className="inline-block rounded-full bg-fresh-light px-3 py-1 text-xs font-semibold uppercase tracking-wide text-fresh-dark">
-            Preços
-          </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Simples
-          </h2>
-        </div>
-
-        <div className="mt-10 grid gap-4">
-          <PriceRow
-            label="Taxa de serviço + entrega"
-            value={BUSINESS.serviceFee}
-            note="Por encomenda, dentro da zona de entrega."
-          />
-          <PriceRow
-            label="Valor mínimo de compra"
-            value={BUSINESS.minimumOrder}
-            note="Encomendas abaixo deste valor podem não ser aceites."
-          />
         </div>
       </Section>
 
